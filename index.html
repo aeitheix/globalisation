@@ -1,0 +1,154 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Globalisation – Chapter 7</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--ink:#eaf2ff;--mut:#9db4d9;--a:#22d3ee;color-scheme:dark}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*:before,*:after{box-sizing:inherit}
+body{margin:0;height:100%;height:100dvh;position:relative;overflow:hidden;background:radial-gradient(circle at 70% 15%,#12307a 0,#050b1f 62%);color:var(--ink);font-family:'Montserrat','Segoe UI',system-ui,-apple-system,Arial,sans-serif;font-weight:600}
+#cv{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+#pg{position:absolute;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,#22d3ee,#fbbf24,#a78bfa);transition:width .5s;z-index:6}
+#deck{container-type:size;position:absolute;z-index:1;overflow:hidden;transform-origin:center;border-radius:0;transform-origin:0 0;background:rgba(5,11,31,.35);caret-color:#fff}#deck:focus{outline:none}
+.s{position:absolute;inset:0;padding:28px 56px;display:flex;flex-direction:column;justify-content:center;gap:16px;overflow-y:auto;opacity:0;pointer-events:none;transform:translateX(60px);transition:opacity .6s,transform .6s}
+.s.on{opacity:1;pointer-events:auto;transform:none}.s.prev{transform:translateX(-60px)}
+.tag{display:flex;gap:8px;flex-wrap:wrap}.tag b{background:var(--a);color:#04101f;padding:4px 16px;border-radius:20px;font-size:18px;font-weight:900}.tag span{font-size:18px;font-weight:700;color:var(--ink);border:2px solid var(--a);padding:4px 16px;border-radius:20px}
+h2{overflow-wrap:anywhere;font-size:min(58px,9.5cqw);font-weight:900;letter-spacing:-.01em;filter:drop-shadow(0 3px 10px rgba(0,0,0,.5));margin:0;line-height:1.05;background:linear-gradient(90deg,#fff,var(--a));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:#d3e2ff;font-size:24px;font-weight:600;margin:0;max-width:1200px;line-height:1.4}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:16px;margin-top:4px}
+.card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-top:3px solid var(--a);border-radius:16px;padding:18px;cursor:pointer;transition:transform .3s,box-shadow .3s}
+.card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(34,211,238,.25)}
+.card .ic{font-size:44px}.card h3,.step h3{margin:4px 0;font-size:26px;font-weight:800}
+.card p,.step p{margin:0;font-size:20px;line-height:1.4;font-weight:600;color:#e3eeff;max-height:0;opacity:0;overflow:hidden;transition:.4s}
+.card.open p,.card:hover p,.step.open p{max-height:600px;opacity:1;margin-top:6px}
+.hint{font-size:16px;color:var(--mut)}
+.s.on .card,.s.on .step,.s.on .st{animation:up .6s both}
+@keyframes up{from{opacity:0;transform:translateY(24px)}}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:8px}.flow span{background:linear-gradient(135deg,var(--a),#818cf8);color:#04101f;font-weight:600;padding:10px 16px;border-radius:14px;font-size:21px;font-weight:800}.flow i{color:var(--a);font-style:normal;font-size:28px}
+.step{background:rgba(255,255,255,.07);border-left:5px solid var(--a);border-radius:10px;padding:14px 18px;cursor:pointer;margin-bottom:12px}
+.step h3 em{font-style:normal;background:var(--a);color:#04101f;border-radius:50%;display:inline-block;width:36px;height:36px;text-align:center;line-height:36px;margin-right:10px;font-size:20px;font-weight:900}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}.st{background:rgba(255,255,255,.07);border-radius:14px;padding:14px;text-align:center}.st b{display:block;font-size:84px;font-weight:900;color:var(--a)}.st span{font-size:19px;color:var(--mut)}
+.pl{display:flex;flex-wrap:wrap;gap:8px}.pl span{border:2px solid var(--a);border-radius:22px;padding:7px 16px;font-size:19px;font-weight:700}
+.chip{display:inline-block;margin:5px;padding:10px 18px;font-size:22px;font-weight:800;border-radius:10px;background:#7f1d1d;border:1px solid #f87171;transition:.7s}
+.gl .chip{text-decoration:line-through;opacity:.4;transform:rotate(-8deg) translateY(14px);background:#14532d;border-color:#34d399}
+.aft{display:none}.gl .aft{display:flex}
+.b{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);color:var(--ink);border-radius:20px;padding:10px 18px;font-size:18px;font-weight:800;font-family:inherit;cursor:pointer;align-self:flex-start}.b:hover{background:rgba(34,211,238,.25)}
+.ti{align-items:center;text-align:center}.ti h1{font-size:min(104px,8.2cqw);white-space:nowrap;font-weight:900;letter-spacing:.02em;filter:drop-shadow(0 4px 14px rgba(0,0,0,.5));margin:0;background:linear-gradient(90deg,#22d3ee,#fbbf24,#a78bfa);-webkit-background-clip:text;background-clip:text;color:transparent}
+.globe{width:210px}.m{transform-box:fill-box;transform-origin:center;animation:m 6s linear infinite}.orb{animation:r 10s linear infinite}
+@keyframes m{50%{transform:scaleX(0)}100%{transform:scaleX(-1)}}@keyframes r{to{transform:rotate(360deg)}}
+#nav{position:absolute;left:0;right:0;bottom:0;height:56px;z-index:5;display:flex;align-items:center;gap:8px;padding:0 12px;background:rgba(5,11,31,.75);backdrop-filter:blur(8px)}#nav .c{margin-left:auto;font-size:15px;font-weight:700;color:var(--mut)}
+#mn{position:absolute;inset:0;z-index:8;background:rgba(5,11,31,.96);display:none;overflow:auto;padding:20px}#mn.on{display:block}#mn button{display:block;width:100%;text-align:left;margin:6px 0;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.2);color:var(--ink);padding:10px 14px;border-radius:10px;font-size:15px;cursor:pointer}#mn small{color:var(--mut)}
+.pt .s{padding:24px 28px}.pt h2{font-size:42px}.pt .sub{font-size:21px}.pt .globe{width:230px}.pt .st b{font-size:64px}
+.ed #deck{box-shadow:0 0 0 2px #fbbf24}.ed .card:hover{transform:none}.ed .card p,.ed .step p{max-height:none;opacity:1;margin-top:6px}.ed .card,.ed .step{cursor:text}
+#nav{overflow-x:auto}#nav .b{font-size:15px;padding:8px 12px;white-space:nowrap;flex:none;align-self:center}#nav .c{white-space:nowrap}@media(max-width:560px){#ct{display:none}}
+.s>*{zoom:var(--z,1)}.s{overflow:hidden}
+.card p,.step p{max-height:none;opacity:1;margin-top:6px}.card,.step{cursor:default}.s:not(.ti) .hint{display:none}
+.nf *{animation:none!important;transition:none!important}
+body.hu #nav{display:none}#shw{display:none;position:fixed;right:10px;bottom:10px;z-index:9;opacity:.35;font-size:18px;padding:8px 12px;border-radius:50%}body.hu #shw{display:block}#shw:hover,#shw:active{opacity:1}
+#hs{position:absolute;inset:0;z-index:9;background:rgba(5,11,31,.97);display:none;overflow:auto;padding:20px}#hs.on{display:block}#hs h2{font-size:34px;margin-bottom:10px}
+.rv{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:8px 0;padding:10px 14px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.2);border-radius:12px;font-size:15px}.rv.cu{border-color:#22d3ee}.rv .t{flex:1 1 180px;font-weight:800}.rv small{color:var(--mut);font-weight:600;display:block}.rv .b{padding:7px 12px;font-size:14px;align-self:center}
+#sv{font-size:14px;font-weight:700;color:var(--mut);white-space:nowrap;margin-left:auto;flex:none}#sv+#ct{margin-left:8px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head><body>
+<canvas id="cv"></canvas><div id="pg"></div><div id="deck"></div>
+<div id="nav"><button class="b" id="pv">◀</button><button class="b" id="nx">▶</button><button class="b" id="mb">☰ Parts</button><button class="b" id="eb">✏️ Edit</button><button class="b" id="hb">⌄ Hide bar</button><button class="b" id="hi">🕘 History</button><button class="b" id="fs">⛶ Full screen</button><span id="sv"></span><span class="c" id="ct"></span></div>
+<button class="b" id="shw" title="Show menu bar">☰</button><div id="mn"></div><div id="hs"></div>
+<script>
+const C=['#22d3ee','#fbbf24','#a78bfa','#34d399','#fb7185','#60a5fa'];
+const D=[
+{p:1,t:'Introduction',r:'Avendaño',s:'National economies once isolated by barriers are now merging into one inter-dependent global economic system.',k:'bar'},
+{p:2,t:'Emerging Global Economy',r:'Dizon',s:'The 1980s–1990s brought political, economic, technological and environmental transitions that reshape our lives, much like the early Industrial Revolution — fuelling globalisation.',k:'stat'},
+{p:3,t:'Drivers of Globalisation',r:'Malayag',s:'Two macro factors underlie the trend: declining barriers and technological change.',c:[['🚧','Declining barriers','Since World War II, barriers to the free flow of goods, services and capital have declined. In the 1920s–30s, high tariffs protected domestic industries from foreign competition.'],['📜','GATT (1947)','Rules for non-discrimination, transparent procedures, settlement of disputes and participation of lesser-developed countries in trade.'],['📡','Technological change','Dramatic developments in communication, information processing and transportation technologies.'],['🔁','Trade vs FDI','Trade: a firm exports goods or services to consumers abroad. FDI: a firm invests resources in business activities outside its home country.']],f:['High tariffs (1920s–30s)','GATT (1947)','Free flow of goods, services & capital']},
+{p:4,t:'Globalisation of Markets',r:'Zaragosa',s:'National markets merge into one huge global marketplace as falling barriers make it easier to sell internationally and consumer tastes converge on a global norm. A domestic company becomes international in stages:',k:'step',c:[[1,'No Direct Foreign Marketing','Does not actively cultivate customers abroad, yet products may reach foreign markets through trading companies, foreign customers or wholesalers. Websites can receive international orders.'],[2,'Infrequent Foreign Marketing','Temporary surpluses lead to overseas sales as goods are available, with little or no intention of continuous market representation.']]},
+{p:5,t:'Regular → Global Marketing',r:'Labayo',s:'The climb continues — from regular foreign marketing to treating the whole world as one market.',k:'step',c:[[3,'Regular Foreign Marketing','Permanent productive capacity for foreign markets; uses middlemen or its own sales force or subsidiaries. Focus is still domestic needs, but production is allocated abroad as overseas demand grows.'],[4,'International Marketing','Fully committed: seeks markets worldwide with planned production for various countries, including production outside the home market. Becomes an international or multinational firm.'],[5,'Global Marketing','The world, including the home market, is one market. Segments are defined by income levels or usage patterns, not national borders — often catalysed when more than half of sales revenue comes from abroad.']]},
+{p:6,t:'Policy Issues',r:'Fortunado',s:'Problems in the major institutions of global governance.',c:[['🦅','Unilateralism & hegemons','Lack of democracy: voting and representation are heavily skewed towards the hegemons.'],['🕰️','Old spirit, old methods','Policies ignore the dynamising impact of globalisation — time and space compression and mobility of capital and markets.'],['⚖️','Poverty & inequality','Poverty intensified in the global South, income inequalities increased in the North; arbitrariness in the World Bank and IMF.'],['🌐','WTO & Doha Rounds','The "Reciprocity" clause limits leverage of smaller countries; major powers foot-dragged since Doha. Charters and Conventions need reform.']]},
+{p:7,t:'At Inauguration',r:'Lacanilao',s:'Institutions were built for a world that no longer exists.',c:[['❄️','The Cold War ended','Global circumstances that gave rise to constitutive rules and structures of operation have changed significantly.'],['🏗️','Outdated structures','The extant structures cannot effectively serve the present global system of organisation.'],['🔄','Review and revise','At minimum, structures must take into cognizance the present national and regional balances and imbalances.']],f:['Institutions born','Cold War ends','Review & revise']},
+{p:8,t:'Democratic Deficits',r:'',s:'Engagements within international organisations can hardly be described as democratic.',c:[['🔍','Transparency & capacity','Transparency issues are constant; developing countries lack the resources/capacity that dominant states have.'],['🛡️','UN Security Council','Permanent members with veto powers vet General Assembly decisions — a block of the "almighty" among equal states.'],['🗂️','Huge bureaucracy','Affects response and carrying capacity; disproportionate structuring; efficiency measured more by paper work than real work.'],['🛠️','Reform now','Proposed reforms should not be delayed, but pursued to their logical conclusions.']]},
+{p:9,t:'Global Response to Regional Problems',r:'Pontillas',s:'Responses to regions like Africa are often inadequate and untimely.',c:[['⏳','Ignored early warnings','Early warning signals are disregarded; IMF, World Bank and UN engage only after something happens.'],['🕊️','Weak and arbitrary mechanisms','Protection of human rights and prevention of atrocities is weak — haste to save Kuwaitis vs. lack of enthusiasm on Rwanda and a lukewarm approach to Darfur.']],f:['Rights of citizens','Sovereignty of states','Legitimacy of mandate'],fs:'⚖️'},
+{p:10,t:'Legitimacy Issues',r:'Cuevas',s:'Legitimacy is mostly linked to perception — and it is at the heart of the challenge facing many international organisations.',c:[['👁️','Perception','Legitimacy is judged by how organisations are seen to perform.'],['💔','Failures','Failure to meet global challenges, particularly distraught humanitarian cases like Rwanda and Darfur.'],['❓','Suspicion','Constant suspicion and calls questioning the very basis of their existence and corporate legitimacy.']],f:['Failure to rise to challenges','Constant suspicion','Legitimacy questioned']},
+{p:11,t:'Issues of Accountability and Transparency',r:'Albante',s:'Perceived lack of transparency worsens the case of accountability.',c:[['🔦','Lack of transparency','Seen as hidden from the nations they represent.'],['📈','Growing responsibilities','Global tasks beyond the original mission, with greater impact on peoples and states than 20 years ago.'],['🚫','Hardly accountable','No independent institution acts on behalf of the generality of nations they represent.']]},
+{p:12,t:'Enforcement of Mandate',r:'Bien',s:'Enforcement powers of international organisations are severely limited.',c:[['💰','Resources & authorization','Mandates depend on resources provided by patronizing or member states, and on their authorization.'],['🏢','Distant bureaucracies','Concentration of powers in centralized, distant bureaucracies with little sympathy for local cultural norms.'],['⚠️','Division of powers','This can counteract the "division of powers" and the benefits of adapting methods of government to localities.']]},
+{p:13,t:'Globalization in India',r:'',s:'Globalisation is an integral part of India\'s recent economic progress.',c:[['🚀','Export-led growth','Globalisation played a major role in export-led growth, enlarging the job market.'],['💻','IT & BPO outsourcing','Skilled professionals serve customers in the US and Europe. Lower-cost, educated, English-speaking workforce + VOIP, email and internet lets enterprises lower their cost base.'],['🔓','Opening in the early 1990s','A foreign exchange crunch nearly led to default; domestic and external policy measures pushed a more open, market-oriented economy.']],f:['Forex crunch','Policy measures','Open, market-oriented economy']}
+];
+let h=`<section class="s ti on" style="--a:#22d3ee"><svg class="globe" viewBox="-130 -130 260 260"><defs><radialGradient id="g" cx=".35" cy=".3"><stop offset="0" stop-color="#2563eb"/><stop offset="1" stop-color="#0a1a4a"/></radialGradient></defs><circle r="100" fill="url(#g)" stroke="#22d3ee" stroke-width="2"/><g fill="none" stroke="#22d3ee" stroke-opacity=".6"><ellipse class="m" rx="100" ry="100"/><ellipse class="m" style="animation-delay:-2s" rx="100" ry="100"/><ellipse class="m" style="animation-delay:-4s" rx="100" ry="100"/><path d="M-100 0H100M-87-50H87M-87 50H87"/></g><g class="orb"><ellipse rx="125" ry="38" fill="none" stroke="#fbbf24" stroke-dasharray="4 6"/><circle cx="125" r="7" fill="#fbbf24"/></g></svg><h1>GLOBALISATION</h1><p class="sub">Chapter 7 · OLCBIBT01 – International Business and Trade</p><p class="sub">Emerging economy · Drivers · Global markets · Policy issues · India</p><button class="b" style="align-self:center" onclick="go(1)">Start the journey ▶</button><p class="hint">Use ← → keys, swipe, or ☰ Parts to jump around · ✏️ Edit to change any text · ⛶ Full screen (F) · ⌄ Hide bar (H)</p></section>`;
+D.forEach((d,i)=>{let b='';
+if(d.k=='bar')b=`<div>${['Distance','Time zones','Language','Govt. regulation','Culture','Business systems'].map(x=>`<span class="chip">${x}</span>`).join('')}</div><button class="b" id="tg">🌍 Tumble the barriers</button><div class="aft pl">${['Barriers to cross-border trade & investment tumbling','Perceived distance shrinking (transport & telecom)','Material culture looks similar worldwide','Economies merge into one system'].map(x=>`<span>${x}</span>`).join('')}</div><div class="card open"><h3>🏦 IMF definition</h3><p>Globalisation is the growing interdependence of countries worldwide through increasing volume and variety of cross-border transactions in goods and services, international capital flows, and the more rapid, wide spread diffusion of technology.</p></div>`;
+else if(d.k=='stat')b=`<div class="stats"><div class="st"><b data-to="194" data-pre="+" data-suf="%">0</b><span>world exports since 1980</span></div><div class="st"><b data-from="9" data-to="26" data-suf="%">9%</b><span>U.S. trade as % of GDP: 1980 → 2004</span></div><div class="st"><b data-to="3" data-suf="×+">0</b><span>U.S. imports more than tripled</span></div></div><p class="sub">Nations find it cheaper and more efficient to trade than to produce everything at home. Cross-border trade and investment grow faster than global output.</p><div class="pl">${['State-owned businesses privatized','Widespread deregulation','Markets opened to competition','Barriers to trade & investment removed'].map(x=>`<span>${x}</span>`).join('')}</div>`;
+else if(d.k=='step')b=d.c.map((x,j)=>`<div class="step" style="margin-left:${(x[0]-1)*4}%;animation-delay:${j*.15}s"><h3><em>${x[0]}</em>${x[1]}</h3><p>${x[2]}</p></div>`).join('')+'<p class="hint">Tap a stage to open it · Stages 1–5: No direct → Infrequent → Regular → International → Global</p>';
+else b=`<div class="grid">${d.c.map((x,j)=>`<div class="card" style="animation-delay:${j*.12}s"><div class="ic">${x[0]}</div><h3>${x[1]}</h3><p>${x[2]}</p></div>`).join('')}</div><p class="hint">Tap or hover a card to reveal it</p>`;
+if(d.f)b+=`<div class="flow">${d.f.map(x=>`<span>${x}</span>`).join(`<i>${d.fs||'→'}</i>`)}</div>`;
+h+=`<section class="s" style="--a:${C[i%6]}"><div class="tag"><b>P${d.p}</b><span>🎤 Reporter: ${d.r||'to be assigned'}</span></div><h2>${d.t}</h2><p class="sub">${d.s}</p>${b}</section>`});
+const dk=document.getElementById('deck');dk.innerHTML=h;
+let sl=[...dk.children];const mn=document.getElementById('mn');let cur=0;
+mn.innerHTML='<h2>Parts</h2>'+D.map((d,i)=>`<button onclick="go(${i+1})">P${d.p} · ${d.t} <small>— ${d.r||'to be assigned'}</small></button>`).join('')+'<button onclick="mn.classList.remove(\'on\')">✕ Close</button>';
+function cnt(s){s.querySelectorAll('[data-to]').forEach(e=>{const f=+(e.dataset.from||0),t=+e.dataset.to,p=e.dataset.pre||'',u=e.dataset.suf||'',t0=performance.now();(function k(n){const r=Math.min(1,(n-t0)/1400);e.textContent=p+Math.round(f+(t-f)*(1-Math.pow(1-r,3)))+u;if(r<1)requestAnimationFrame(k)})(t0)})}
+function go(n){n=Math.max(0,Math.min(sl.length-1,n));cur=n;sl.forEach((s,i)=>{s.classList.toggle('on',i==n);s.classList.toggle('prev',i<n)});mn.classList.remove('on');document.getElementById('pg').style.width=(n/(sl.length-1)*100)+'%';document.getElementById('ct').textContent=n?('P'+D[n-1].p+' · '+n+'/'+(sl.length-1)):'Title';cnt(sl[n])}
+dk.addEventListener('click',e=>{if(ed)return;if(!e.target.closest('button,a')){const x=e.clientX/innerWidth;if(x<.25){go(cur-1);return}if(x>.75){go(cur+1);return}}const c=e.target.closest('.card,.step');if(c)c.classList.toggle('open');if(e.target.id=='tg'){const s=e.target.closest('.s');s.classList.toggle('gl');e.target.textContent=s.classList.contains('gl')?'🔒 Rebuild the barriers':'🌍 Tumble the barriers'}});
+document.getElementById('nx').onclick=()=>go(cur+1);document.getElementById('pv').onclick=()=>go(cur-1);document.getElementById('mb').onclick=()=>{menu();mn.classList.toggle('on')};
+addEventListener('keydown',e=>{if(ed){if(e.key=='Escape')setEd(0);return}if(['ArrowRight',' ','PageDown'].includes(e.key))go(cur+1);else if(['ArrowLeft','PageUp'].includes(e.key))go(cur-1);else if(e.key=='f'||e.key=='F')tfs();else if(e.key=='h'||e.key=='H')thu();else if(e.key=='m')(menu(),mn.classList.toggle('on'));else if(e.key=='Home')go(0);else if(e.key=='End')go(sl.length-1)});
+let tx=0;addEventListener('touchstart',e=>tx=e.touches[0].clientX);addEventListener('touchend',e=>{if(ed)return;const d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>60)go(cur+(d<0?1:-1))});
+go(0);
+let ed=0,tm;
+function menu(){mn.innerHTML='<h2>Parts</h2>'+sl.slice(1).map((s,i)=>`<button onclick="go(${i+1})">${s.querySelector('.tag b')?.textContent} · ${s.querySelector('h2')?.textContent} <small>— ${s.querySelector('.tag span')?.textContent}</small></button>`).join('')+'<button onclick="rst()">↺ Reset all edits</button><button onclick="mn.classList.remove(\'on\')">✕ Close</button>'}
+function fit(){const aw=document.body.clientWidth,ah=document.body.clientHeight-(document.body.classList.contains('hu')?0:56),P=aw<ah,k=P?aw/420:Math.min(aw/760,ah/430);document.body.classList.toggle('pt',P);dk.style.cssText=`width:${aw/k}px;height:${ah/k}px;left:0;top:0;transform:scale(${k})`;fz()}
+function over(s){const r=s.getBoundingClientRect(),cs=[...s.children].map(c=>c.getBoundingClientRect()).filter(q=>q.height),a=Math.min(...cs.map(q=>q.top)),b=Math.max(...cs.map(q=>q.bottom)),k=r.width/s.offsetWidth||1,pd=parseFloat(getComputedStyle(s).paddingTop)*2*k;if(b-a+pd>r.height-1)return 1;for(const e of s.querySelectorAll('*')){if(e.closest('svg')&&e.tagName!='svg')continue;const q=e.getBoundingClientRect();if(q.width&&(q.left<r.left-1||q.right>r.right+1))return 1}return 0}
+function fz(){dk.classList.add('nf');sl.forEach(s=>{s.style.setProperty('--z',1);let z=1;while(z>.3&&over(s)){z-=.03;s.style.setProperty('--z',z.toFixed(2))}});dk.classList.remove('nf')}
+const de=document.documentElement,rf=de.requestFullscreen||de.webkitRequestFullscreen,fsb=document.getElementById('fs');
+function isFs(){return document.fullscreenElement||document.webkitFullscreenElement}
+function tfs(){if(isFs())(document.exitFullscreen||document.webkitExitFullscreen).call(document);else if(rf)rf.call(de)}
+function fsu(){fsb.textContent=isFs()?'✕ Exit full screen':'⛶ Full screen';setTimeout(fit,100)}
+if(!rf)fsb.style.display='none';
+function thu(){document.body.classList.toggle('hu');document.getElementById('hb').textContent='⌄ Hide bar';fit()}
+document.getElementById('hb').onclick=thu;document.getElementById('shw').onclick=thu;
+addEventListener('orientationchange',()=>setTimeout(fit,250));if(window.visualViewport)visualViewport.addEventListener('resize',()=>{if(!ed)fit()});
+fsb.onclick=tfs;document.addEventListener('fullscreenchange',fsu);document.addEventListener('webkitfullscreenchange',fsu);
+function setEd(v){ed=v;document.body.classList.toggle('ed',!!v);dk.contentEditable=v?'true':'false';document.getElementById('eb').textContent=v?'✔ Done':'✏️ Edit';if(!v){getSelection().removeAllRanges();sv();fz()}}
+document.getElementById('eb').onclick=async()=>{if(viewing){alert('You are viewing an old version. Open History and choose "Make current" (or go back to current) before editing.');return}if(!ed)await sync();setEd(!ed)};
+dk.addEventListener('input',()=>{const n=getSelection().anchorNode,el=n&&(n.nodeType==1?n:n.parentElement),c=el&&el.closest('[data-to]');if(c)c.removeAttribute('data-to');clearTimeout(tm);tm=setTimeout(sv,400)});
+fit();if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);addEventListener('load',fit);addEventListener('resize',()=>{if(!ed)fit()});
+
+/* ---------- cloud save + revision history ---------- */
+const API='/api/deck',hs=document.getElementById('hs');
+let viewing=0,curTs=0,st=0,key='',cacheOK=1;
+try{key=localStorage.getItem('glob-key')||''}catch(e){}
+const stat=t=>document.getElementById('sv').textContent=t;
+const fmt=ts=>new Date(ts).toLocaleString([],{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'});
+function snap(){const c=dk.cloneNode(true);c.querySelectorAll('.gl').forEach(e=>e.classList.remove('gl'));c.querySelectorAll('#tg').forEach(e=>e.textContent='🌍 Tumble the barriers');return c.innerHTML}
+function apply(html){dk.innerHTML=html;sl=[...dk.children];fit();go(Math.min(cur,sl.length-1))}
+function sv(){if(viewing)return;clearTimeout(st);stat('● Saving…');st=setTimeout(()=>push(),1200)}
+async function push(label,tries=0){
+  const html=snap();try{localStorage.setItem('glob-deck-cache',html)}catch(e){}
+  try{
+    const r=await fetch(API+'?action=save',{method:'POST',headers:{'content-type':'application/json','x-edit-key':key},body:JSON.stringify({html,label:label||''})});
+    if(r.status==401){const k=prompt('Enter the edit passcode to save changes:');if(k){key=k;try{localStorage.setItem('glob-key',k)}catch(e){}return push(label)}stat('⚠ Not saved (locked)');return}
+    if(!r.ok)throw 0;const j=await r.json();curTs=j.ts;stat('✓ Saved '+fmt(j.ts))
+  }catch(e){stat('⚠ Offline – retrying');if(tries<20)st=setTimeout(()=>push(label,tries+1),8000)}
+}
+async function sync(force){
+  try{const r=await fetch(API+'?action=latest',{cache:'no-store'});if(!r.ok)throw 0;const j=await r.json();
+    if(j.empty){stat('No cloud save yet');return}
+    if(force||j.ts>curTs){apply(j.html);curTs=j.ts}stat('✓ Saved '+fmt(curTs))
+  }catch(e){if(!curTs){try{const c=localStorage.getItem('glob-deck-cache');if(c)apply(c)}catch(_){}}stat('⚠ Offline')}
+}
+async function hist(){
+  hs.classList.add('on');hs.innerHTML='<h2>Revision history</h2><p class="sub">Loading…</p>';
+  let revs=[];try{revs=(await (await fetch(API+'?action=list',{cache:'no-store'})).json()).revs||[]}catch(e){hs.innerHTML='<h2>Revision history</h2><p class="sub">Could not load (offline?).</p><button class="b" onclick="hs.classList.remove(\'on\')">✕ Close</button>';return}
+  hs.innerHTML='<h2>Revision history</h2>'+(viewing?'<p class="sub">👁 You are viewing an old version (read-only, nothing is saved).</p><button class="b" onclick="backCur()">↩ Back to current</button>':'')
+   +'<div style="margin:10px 0"><button class="b" onclick="nameV()">💾 Save named version</button> <button class="b" onclick="hs.classList.remove(\'on\')">✕ Close</button></div>'
+   +(revs.length?revs.map((r,i)=>`<div class="rv${i==0?' cu':''}"><div class="t">${i==0?'⭐ Current · ':''}${fmt(r.ts)}<small>${r.label?r.label.replace(/</g,'&lt;')+' · ':''}${Math.round(r.size/1024)} KB</small></div><button class="b" onclick="viewRev('${r.id}')">👁 Present</button><button class="b" onclick="restRev('${r.id}')">✔ Make current</button></div>`).join(''):'<p class="sub">No saved revisions yet. Edit something and it will appear here.</p>');
+}
+async function viewRev(id){const r=await (await fetch(API+'?action=get&id='+id)).json();apply(r.html);viewing=1;stat('👁 Viewing '+fmt(r.ts));hs.classList.remove('on')}
+async function backCur(){viewing=0;await sync(true);hs.classList.remove('on')}
+async function restRev(id){
+  if(!confirm('Make this version the current one? Your latest version stays in history.'))return;
+  try{const r=await fetch(API+'?action=restore',{method:'POST',headers:{'content-type':'application/json','x-edit-key':key},body:JSON.stringify({id})});
+    if(r.status==401){const k=prompt('Enter the edit passcode:');if(k){key=k;try{localStorage.setItem('glob-key',k)}catch(e){}return restRev(id)}return}
+    if(!r.ok)throw 0;viewing=0;await sync(true);hs.classList.remove('on')}catch(e){alert('Could not restore.')}
+}
+function nameV(){const l=prompt('Name this version (e.g. "Final for presentation"):');if(l)push(l).then(hist)}
+function rst(){if(!confirm('Reset the deck to the original content? This is saved as a new revision, so you can undo it from History.'))return;viewing=0;apply(h);mn.classList.remove('on');push('Reset to original')}
+document.getElementById('hi').onclick=hist;
+addEventListener('keydown',e=>{if(e.key=='Escape'&&hs.classList.contains('on'))hs.classList.remove('on')});
+document.addEventListener('visibilitychange',()=>{if(!document.hidden&&!ed&&!viewing)sync()});
+addEventListener('pagehide',()=>{if(ed&&document.getElementById('sv').textContent.includes('Saving')){try{fetch(API+'?action=save',{method:'POST',keepalive:true,headers:{'content-type':'application/json','x-edit-key':key},body:JSON.stringify({html:snap()})})}catch(e){}}});
+sync();
+const cv=document.getElementById('cv'),g=cv.getContext('2d');let W,H,N=[];function rs(){W=cv.width=innerWidth;H=cv.height=innerHeight;N=Array.from({length:Math.min(42,W/22|0)},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4}))}rs();addEventListener('resize',rs);
+(function f(){g.clearRect(0,0,W,H);N.forEach((a,i)=>{a.x=(a.x+a.vx+W)%W;a.y=(a.y+a.vy+H)%H;g.fillStyle='#22d3ee';g.beginPath();g.arc(a.x,a.y,2,0,7);g.fill();for(let j=i+1;j<N.length;j++){const b=N[j],d=Math.hypot(a.x-b.x,a.y-b.y);if(d<140){g.strokeStyle='rgba(34,211,238,'+(.28-d/600)+')';g.beginPath();g.moveTo(a.x,a.y);g.lineTo(b.x,b.y);g.stroke()}}});requestAnimationFrame(f)})();
+</script></body></html>
